@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:habbit/utils/extensions.dart';
-import 'package:gap/gap.dart';
 import 'package:habbit/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,39 +32,48 @@ class HomeScreen extends StatelessWidget {
                       text: 'Habbits',
                       fontSize: 40,
                     ),
-                  ],
+                  ], // here will  be processing
                 ),
               ),
             ],
           ),
           Positioned(
-            top: 70,
+            top: 160,
             left: 0,
             right: 0,
-            child: SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Container(
-                    width: deviceSize.width,
-                    height: deviceSize.height * 0.3,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: colors.primaryContainer,
+            child: SafeArea(
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const DisplayListOfHabits(
+                        habits:  [], 
+                      ),
+                    const Gap(20),
+                    Text(
+                      'Completed',
+                      style: context.textTheme.headlineMedium,
                     ),
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: 8,
-                        padding: EdgeInsets.zero,
-                        itemBuilder: (ctx, index) {
-                          return const Text('Home');
-                        }),
-                  ),
-                ],
+                    const Gap(20),
+                    const DisplayListOfHabits(
+                        habits:  [], 
+                        isCompletedHabits: true,
+                      ),
+                    const Gap(20),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: DisplayWhiteText(text: 'Add new habit'),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -73,4 +81,3 @@ class HomeScreen extends StatelessWidget {
 }
 
 // all fependency that i ll be use in thes project
-// alalla
