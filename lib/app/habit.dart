@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:habbit/screens/screen.dart';
 import 'package:habbit/config/theme/app_theme.dart';
 
-class Habbit extends StatelessWidget {
-  const Habbit({super.key});
+class Habit extends StatelessWidget {
+  const Habit({super.key});
 
   // This widget is the root of your application.
   @override

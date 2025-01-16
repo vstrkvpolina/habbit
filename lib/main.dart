@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'app/habbit.dart';
+import 'app/habit.dart';
 
 void main() {
-  runApp(const Habbit());
+  runApp(const Habit());
 }
 

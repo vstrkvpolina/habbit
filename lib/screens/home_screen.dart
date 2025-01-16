@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:habbit/data/data.dart';
 import 'package:habbit/utils/extensions.dart';
+import 'package:habbit/utils/utils.dart';
 import 'package:habbit/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,8 +51,29 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const DisplayListOfHabits(
-                        habits:  [], 
-                      ),
+                      habits: [
+                        Habit(
+                          /* here's the problem*/
+                          id: 1, //da fuk
+                          title: 'title 1',
+                          note: 'note',
+                          time: '23:23',
+                          date: 'Jan, 15',
+                          isCompleted: false,
+                          category: HabitCategories.education,
+                        ),
+                        Habit(
+                          /* here's the problem*/
+                          id: 1, //da fuk
+                          title: 'title 2',
+                          note: 'note',
+                          time: '23:53',
+                          date: 'Jan, 15',
+                          isCompleted: false,
+                          category: HabitCategories.education,
+                        ),
+                      ],
+                    ),
                     const Gap(20),
                     Text(
                       'Completed',
@@ -58,9 +81,31 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const Gap(20),
                     const DisplayListOfHabits(
-                        habits:  [], 
-                        isCompletedHabits: true,
-                      ),
+                      habits: [
+
+                        Habit(
+                          /* here's the problem*/
+                          id: 1, //da fuk
+                          title: 'title 1',
+                          note: 'note',
+                          time: '23:23',
+                          date: 'Jan, 15',
+                          isCompleted: true,
+                          category: HabitCategories.education,
+                        ),
+                        Habit(
+                          /* here's the problem*/
+                          id: 1, //da fuk
+                          title: 'title 2',
+                          note: 'note',
+                          time: '23:53',
+                          date: 'Jan, 15',
+                          isCompleted: true,
+                          category: HabitCategories.education,
+                        ),
+                      ],
+                      isCompletedHabits: true,
+                    ),
                     const Gap(20),
                     ElevatedButton(
                       onPressed: () {},
