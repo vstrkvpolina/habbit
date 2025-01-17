@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                           time: '23:23',
                           date: 'Jan, 15',
                           isCompleted: false,
-                          category: HabitCategories.education,
+                          category: HabitCategories.shopping,
                         ),
                         Habit(
                           /* here's the problem*/
@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                           time: '23:23',
                           date: 'Jan, 15',
                           isCompleted: true,
-                          category: HabitCategories.education,
+                          category: HabitCategories.personal,
                         ),
                         Habit(
                           /* here's the problem*/
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                           time: '23:53',
                           date: 'Jan, 15',
                           isCompleted: true,
-                          category: HabitCategories.education,
+                          category: HabitCategories.work,
                         ),
                       ],
                       isCompletedHabits: true,

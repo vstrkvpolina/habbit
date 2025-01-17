@@ -3,7 +3,6 @@ import 'package:habbit/data/data.dart';
 import 'package:habbit/utils/extensions.dart';
 import 'package:habbit/widgets/widgets.dart';
 
-
 class DisplayListOfHabits extends StatelessWidget {
   const DisplayListOfHabits({
     super.key,
@@ -39,7 +38,7 @@ class DisplayListOfHabits extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
                 final habit = habits[index];
-                return HabitTile (habit: habit);
+                return HabitTile(habit: habit);
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const Divider(thickness: 1.5);

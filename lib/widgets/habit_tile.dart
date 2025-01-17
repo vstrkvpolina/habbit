@@ -9,11 +9,14 @@ class HabitTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = context.colorScheme;
+    
     final style = context.textTheme;
-    final double iconOpacity = habit.isCompleted? 0.3 : 0.5;
-    final backgroundOpacity = habit.isCompleted? 0.1 : 0.3;
-
+    final double iconOpacity = habit.isCompleted ? 0.3 : 0.5;
+    final backgroundOpacity = habit.isCompleted ? 0.1 : 0.3;
+    final textDecoration =
+        habit.isCompleted ? TextDecoration.lineThrough : TextDecoration.none;
+    final fontWeight = habit.isCompleted? FontWeight.normal: FontWeight.bold;
+    final Function(bool?)?  onCompleted;
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -27,16 +30,18 @@ class HabitTile extends StatelessWidget {
             padding: const EdgeInsets.all(9.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: habit.category.color, // new type shi backgroundOpacity
+              color: habit.category.color
+                  .withValues(blue: 0.2), // new type shi backgroundOpacity
               border: Border.all(
                 width: 2,
-                color: habit.category.color, // backgroundOpacity
+                color: habit.category.color
+                    .withValues(blue: 0.2), // backgroundOpacity
               ),
             ),
             child: Center(
               child: Icon(
                 habit.category.icon,
-                color: habit.category.color, // TODO
+                color: habit.category.color.withValues(blue: 0.2), // TODO
               ),
             ),
           ),
@@ -45,14 +50,22 @@ class HabitTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(habit.title),
-                Text(habit.time),
+                Text(habit.title,
+                    style: style.titleMedium?.copyWith(
+                      decoration: textDecoration,
+                      fontSize: 20,
+                      fontWeight: fontWeight,
+                    )),
+                Text(habit.time,
+                    style: style.titleMedium?.copyWith(
+                      decoration: textDecoration,
+                    )),
               ],
             ),
           ),
           Checkbox(
             value: habit.isCompleted,
-            onChanged: (value) {},
+            onChanged: (value) {}, // onCompleted
           ),
         ],
       ),
