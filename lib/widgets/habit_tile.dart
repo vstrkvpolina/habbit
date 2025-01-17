@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habbit/data/data.dart';
 import 'package:gap/gap.dart';
 import 'package:habbit/utils/extensions.dart';
+import 'package:habbit/widgets/widgets.dart';
 
 class HabitTile extends StatelessWidget {
   const HabitTile({super.key, required this.habit});
@@ -26,18 +27,12 @@ class HabitTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            padding: const EdgeInsets.all(9.0),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
+          CircleContainer(
+
               color: habit.category.color
                   .withValues(blue: 0.2), // new type shi backgroundOpacity
-              border: Border.all(
-                width: 2,
-                color: habit.category.color
-                    .withValues(blue: 0.2), // backgroundOpacity
-              ),
-            ),
+              
+              
             child: Center(
               child: Icon(
                 habit.category.icon,

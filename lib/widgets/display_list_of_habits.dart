@@ -38,7 +38,18 @@ class DisplayListOfHabits extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
                 final habit = habits[index];
-                return HabitTile(habit: habit);
+                return InkWell(
+                  onLongPress: () {
+                    // TODO-Delete Task?
+                  },
+                  onTap: () async {
+                    // TODO - show habit screen
+                    await showModalBottomSheet(context: context, builder: (ctx) {
+                      return HabitWidget(habit: habit);
+                    }
+                    );
+                  },
+                  child: HabitTile(habit: habit));
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const Divider(thickness: 1.5);

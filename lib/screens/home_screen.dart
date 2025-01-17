@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                     DisplayWhiteText(
-                      text: 'Habbits',
+                      text: 'Habits',
                       fontSize: 40,
                     ),
                   ], // here will  be processing
