@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:habbit/widgets/widgets.dart';
 
 class NewHabitScreen extends StatelessWidget {
-  static NewHabitScreen builder(BuildContext contex, GoRoute state) =>
+  static NewHabitScreen builder(BuildContext contex, GoRouterState state) =>
       const NewHabitScreen();
 
   const NewHabitScreen({super.key});
