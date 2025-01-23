@@ -36,7 +36,7 @@ class HabitTile extends StatelessWidget {
             child: Center(
               child: Icon(
                 habit.category.icon,
-                color: habit.category.color.withValues(blue: 0.2), // TODO
+                color: habit.category.color.withValues(red: 255.0, green: 192.0, blue: 203.0), // TODO
               ),
             ),
           ),

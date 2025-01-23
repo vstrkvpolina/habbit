@@ -7,10 +7,12 @@ class AppTheme {
   //private constructor
   const AppTheme._();
 
+  // change this awful tasteless design
+
   //The theme i copy from the done project
 
   static final light = FlexThemeData.light(
-    scheme: FlexScheme.indigo,
+    scheme: FlexScheme.materialBaseline,
     surfaceMode: FlexSurfaceMode.highScaffoldLowSurfacesVariantDialog,
     blendLevel: 40,
     appBarStyle: FlexAppBarStyle.primary,
@@ -22,7 +24,7 @@ class AppTheme {
     swapColors: true,
     lightIsWhite: true,
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
-    fontFamily: GoogleFonts.robotoFlex().fontFamily, // dekko
+    fontFamily: GoogleFonts.robotoFlex().fontFamily,
     subThemesData: const FlexSubThemesData(
       useMaterial3Typography: true,
       fabUseShape: true,
@@ -40,4 +42,3 @@ class AppTheme {
     ),
   );
 }
-

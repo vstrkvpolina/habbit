@@ -1,6 +1,8 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:habbit/config/routes/route_location.dart';
 import 'package:habbit/data/data.dart';
 import 'package:habbit/utils/utils.dart';
 import 'package:habbit/widgets/widgets.dart';
@@ -13,6 +15,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.colorScheme;
+
+
+      // TODO 
+      // theme: FlexThemeData.light(scheme: FlexScheme.mandyRed);
+      // // The Mandy red, dark theme.
+      // darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed);
+      // // Use dark or light theme based on system setting.
+      // themeMode: ThemeMode.system;
+
     final deviceSize = context.deviceSize;
 
     return Scaffold(
@@ -33,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                     DisplayWhiteText(
-                      text: 'Habits',
+                      text: 'My habits',
                       fontSize: 40,
                     ),
                   ], // here will  be processing
@@ -86,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                       habits: [
                         Habit(
                           /* here's the problem*/
-                          id: 1, //da fuk
+                          id: 3, //da fuk
                           title: 'title 1',
                           note: 'note',
                           time: '23:23',
@@ -96,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Habit(
                           /* here's the problem*/
-                          id: 1, //da fuk
+                          id: 4, //da fuk
                           title: 'title 2',
                           note: 'note',
                           time: '23:53',
@@ -109,12 +120,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const Gap(20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => context.push(RouteLocation.newHabit),
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: DisplayWhiteText(text: 'Add new habit'),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
