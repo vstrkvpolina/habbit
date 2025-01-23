@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:habbit/data/data.dart';
-import 'package:habbit/utils/extensions.dart';
 import 'package:habbit/utils/utils.dart';
 import 'package:habbit/widgets/widgets.dart';
 
@@ -67,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Habit(
                           /* here's the problem*/
-                          id: 1, //da fuk
+                          id: 2, //da fuk
                           title: 'title 2',
                           note: 'note',
                           time: '23:53',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habbit/screens/screen.dart';
+import 'package:habbit/screens/screens.dart';
 import 'package:habbit/config/theme/app_theme.dart';
 
 class Habit extends StatelessWidget {
