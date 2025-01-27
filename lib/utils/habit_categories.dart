@@ -11,6 +11,16 @@ enum HabitCategories {
   travel(Icons.travel_explore, Color.fromARGB(255, 82, 82, 82)),
   work(Icons.work, Color.fromARGB(255, 79, 60, 60));
 
+  static HabitCategories stringToCategory(String name) {
+    try {
+      return HabitCategories.values.firstWhere(
+        (category) => category.name == name,
+      );
+    } catch (e) {
+      return HabitCategories.others;
+    }
+  }
+
   final IconData icon;
   final Color color;
   const HabitCategories(this.icon, this.color);
