@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';
 
-import 'package:habbit/utils/habit_categories.dart';
+import 'package:habbit/utils/utils.dart';
 
 import '../../utils/habit_keys.dart';
 
@@ -63,4 +63,26 @@ class Habit extends Equatable {
   // String toJson() => json.encode(toMap());
 
   // factory Habit.fromJson(String source) => Habit.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  Habit copyWith({
+    int? id,
+    String? title,
+    String? note,
+    String? time,
+    String? date,
+    HabitCategories? category,
+    bool? isCompleted,
+  }) {
+    return Habit(
+      id ?? this.id,
+      title ?? this.title,
+      note ?? this.note,
+      time ?? this.time,
+      date ?? this.date,
+      category ?? this.category,
+      isCompleted ?? this.isCompleted,
+    );
+  }
 }
+
+// idk wtf is that i'll fix it later
